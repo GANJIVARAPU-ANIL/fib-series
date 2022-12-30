@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<string.h>
+void search(char str[],char pat[])
+{
+    int n=strlen(str),m=strlen(pat),count=0;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+        {
+            if(pat[j]==str[i+j])
+            {
+                count++;
+            }
+            else
+            {
+                break;
+            }
+        }
+        if(count==m)
+        {
+            printf("%d\t",i);
+        }
+        count=0;
+        
+    }
+}
+int main (void)
+{
+    char str[]="bcdabcbadabcda";
+    char pat[]="abc";
+    search(str,pat);
+    return 0;
+    
+}
